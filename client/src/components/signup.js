@@ -43,11 +43,10 @@ function Signup() {
           value={formData.password}
           onChange={handleChange}
         />
-        <button type="submit">Register</button>
+        <button type="submit">sign up</button>
       </form>
     </div>
   );
 }
 
 export default Signup;
-  
