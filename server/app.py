@@ -2,7 +2,7 @@ from flask import Flask, request, make_response, jsonify
 from flask_restful import Resource, Api
 from flask_migrate import Migrate
 
-from models import db, Hero, Power, HeroPower
+from models import db, User,Book,Favorite, Reading
 
 app = Flask(__name__)
 api = Api(app)
