@@ -8,10 +8,10 @@ import Navbar from './components/NavBar';
 // import Footer from './components/Footer';
 // import './components/Footer.css'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './components/Navbar.css'; 
-import './components/Footer.css'; 
-// import Login from './components/Login';
-// import Signup from './components/Signup';
+import './component/Navbar.css'; 
+import './component/Footer.css'; 
+import Login from './components/Login'
+import Signup from './components/Signup';
 
 function App() {
   return (
@@ -21,8 +21,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/home" element={<Main />} />
-          {/* <Route path="/" element={<Login />} /> 
-          <Route path="/Signup" element={<Signup />} />  */}
+          <Route path="/" element={<Login />} /> 
+          <Route path="/Signup" element={<Signup />} /> 
         </Routes>
       </Router>
     </div>
@@ -30,3 +30,6 @@ function App() {
 }
 
 export default App;
+
+
+
