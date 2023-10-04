@@ -30,9 +30,14 @@ class Book(db.Model, SerializerMixin):
     author = db.Column(db.String)
     publication_year = db.Column(db.Integer)
     cover_image = db.Column(db.String)
+    category_id = db.Column(db.Integer, db.ForeignKey('categories.id'))
 
     favorites = db.relationship('Favorite', back_populates='book')
     readings = db.relationship('Reading', back_populates='book')
+    category = db.relationship('Category', back_populates='books')
+    
+    
+    
 
 class Favorite(db.Model, SerializerMixin):
     __tablename__ = 'favorites'
@@ -58,6 +63,17 @@ class Reading(db.Model, SerializerMixin):
 
     user = db.relationship('User', back_populates='readings')
     book = db.relationship('Book', back_populates='readings')
+
+
+class Category(db.Model):
+    __tablename__ = 'categories'
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String, unique=True)
+    cover_image = db.Column(db.String)  
+
+    books = db.relationship('Book', back_populates='category')
+
 
 if __name__ == '__main__':
     db.create_all()
