@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './login.css'
+import './style.css'
+import { Link } from 'react-router-dom'
 
 function Login() {
   const [loginData, setLoginData] = useState({
@@ -52,8 +53,9 @@ function Login() {
         <button type="submit">Login</button>
         </div> 
         <p className='text-end mt-2'>
-              forgot <a href=''>Password?</a><link to='/signup'className='ms-2'>Signup</link>
-        </p>
+      Forgot <a href='/forgot-password'>Password?</a>
+      <Link to='/Signup' className='ms-2'>Signup</Link>
+    </p>
 
           </form>
       </div>
