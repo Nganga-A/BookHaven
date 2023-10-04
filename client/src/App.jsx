@@ -3,7 +3,6 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import CategoryList from './CategoryList';
 import BookList from './BookList';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
