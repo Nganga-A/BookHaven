@@ -13,8 +13,7 @@ const Category = () => {
         <li className="list-group-item">Fiction</li>
         <li className="list-group-item">Non-Fiction</li>
       </ul>
-    </div> 
-  );
+    </div>   );
 };
 
 export default Category;
