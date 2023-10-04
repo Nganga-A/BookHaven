@@ -10,8 +10,6 @@ function Signup() {
     password: '',
   });
 
-  const [showForm, setShowForm] = useState(false);
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -27,18 +25,12 @@ function Signup() {
     <form>
     <div className='Signup template d-flex justify-content-center align-items-center vh-100 bg-primary'>
       <div className='form container p-5 rounded bg-white'>
-        <h1 className='text-center'>Click the button below</h1>
-        {!showForm ? (
-          <Button onClick={() => setShowForm(true)}>SignUp Here</Button>
-        ) : (
+        <h1 className='text-center'>Sign Up to Create an account </h1>
+        <div/>  
+        <div/>
           <Card bg="light" text="dark" className="mb-3">
-            <Card.Header>
-              <CloseButton
-                onClick={() => setShowForm(false)}
-                aria-label="Close"
-                variant="dark"
-              />
-            </Card.Header>
+            <div/>
+            <div/>
             <Card.Body>
               <Form onSubmit={handleSubmit}>
                 <Row>
@@ -83,8 +75,6 @@ function Signup() {
               </Form>
             </Card.Body>
           </Card>
-        )}
-
       </div>
     </div>
     </form>
