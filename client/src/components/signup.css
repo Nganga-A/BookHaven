@@ -1,0 +1,8 @@
+/* signup.css */
+.signup-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; /* Add margin to space the form from other elements */
+  }
+  
