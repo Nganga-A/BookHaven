@@ -44,37 +44,41 @@ function BookList() {
 
   return (
     <div>
-      <h2>Books</h2>
-      <ul className="list-group">
+      <header style={{ backgroundColor: '#f8f9fa', padding: '20px', marginBottom: '20px' }} className="text-center">
+        <h1>Books</h1>
+      </header>
+      <div className="row">
         {books.map(book => (
-          <li key={book.id} className="list-group-item">
-            <div className="d-flex justify-content-between align-items-center">
-              <div>
-                <strong>Title:</strong> {book.title} <br />
-                <strong>Author(s):</strong> {book.authors?.join(', ')} <br />
-                {book.image && <img src={book.image} alt={book.title} />}
+          <div key={book.id} className="col-md-4">
+            <div className="card mb-4" style={{ border: '1px solid #ddd', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' }}>
+              <img src={book.image} alt={book.title} className="card-img-top" style={{ maxHeight: '200px', objectFit: 'cover' }} />
+              <div className="card-body">
+                <h5 className="card-title" style={{ fontSize: '1.25rem', marginBottom: '10px' }}>{book.title}</h5>
+                <p className="card-text" style={{ fontSize: '1rem', color: '#555' }}>Author(s): {book.authors?.join(', ')}</p>
+                <button
+                  className="btn btn-primary"
+                  onClick={() => addToFavorites(book.id)}
+                  style={{ backgroundColor: '#007bff', color: '#fff', border: 'none', cursor: 'pointer' }}
+                >
+                  Add to Favorites
+                </button>
               </div>
-              <button
-                className="btn btn-primary"
-                onClick={() => addToFavorites(book.id)}
-              >
-                Add to Favorites
-              </button>
             </div>
-          </li>
+          </div>
         ))}
-      </ul>
-
-      <h3>Favorites</h3>
-      <ul className="list-group">
-        {favorites.map(favorite => (
-          <li key={favorite.id} className="list-group-item">
-            <strong>Title:</strong> {favorite.title} <br />
-            <strong>Author(s):</strong> {favorite.authors?.join(', ')} <br />
-            {favorite.image && <img src={favorite.image} alt={favorite.title} />}
-          </li>
-        ))}
-      </ul>
+      </div>
+      <div className="favorites-section">
+        <h2>Favorites</h2>
+        <div className="row">
+          {favorites.map(favorite => (
+            <div key={favorite.id} className="col-md-4">
+              <div className="card mb-4" style={{ border: '1px solid #ddd', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' }}>
+                {/* Display favorite book details here */}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
