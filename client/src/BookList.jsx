@@ -2,7 +2,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
-// Mock data for books (you can replace this with actual data)
+// Mock data for books
 const books = [
   { id: 1, title: 'Book 1', categoryId: 1 },
   { id: 2, title: 'Book 2', categoryId: 1 },
@@ -13,7 +13,7 @@ const books = [
 function BookList() {
   const { categoryId } = useParams();
 
-  // Filter books based on categoryId (if needed)
+  // Filter books based on categoryId 
   const filteredBooks = categoryId
     ? books.filter(book => book.categoryId.toString() === categoryId)
     : books;
