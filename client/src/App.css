@@ -67,18 +67,22 @@
   padding: 0 0.5rem;
   font-size: 15px;
   font-weight: bold;
+  
 }
 .search button{
   outline: none;
   border: none;
   height: 35px;
   padding: 0 0.5rem;
+
+  
 }
 .thumbnail {
   width: 800px;
   height: 450px;
   margin: 0;
   padding: 0;
+
 }
 
 .inputsearch {
@@ -119,14 +123,14 @@
   margin-top: 20px;
 }
 
-.App {
+/* .App {
   text-align: center;
   display: flex;
   min-height: 100vh;
   align-items: center;
   justify-content: center;
   background: linear-gradient(79deg, #2FA5DB, #A8A3A8 48%, #E753E0);
-}
+} */
 
 
 
@@ -174,4 +178,32 @@ button {
   margin-left: 20px;
 }
 
+
+.header {
+  position: relative;
+}
+
+.search-container {
+  position: absolute;
+  top: 50%; /* Adjust this value to position it vertically */
+  left: 50%; /* Adjust this value to position it horizontally */
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.search-container p {
+  margin-top: 10px;
+}
+/* Style for the home image */
+.header img {
+  display: block;
+  max-width: 100%;
+  height: 30rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+  width: 100rem;
+}
 

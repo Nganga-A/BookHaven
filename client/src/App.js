@@ -2,13 +2,13 @@
 import './App.css';
 import React from "react";
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom"; // Import BrowserRouter as Router
-import Main from './components/Main';
-import Navbar from './components/NavBar'; 
-// import Footer from './components/Footer';
-// import './components/Footer.css'; 
+import Main from './component/Main';
+import Navbar from './component/NavBar'; 
+// import Footer from './component/Footer';
+// import './component/Footer.css'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './components/Navbar.css'; 
-import './components/Footer.css'; 
+import './component/Navbar.css'; 
+import './component/Footer.css'; 
 
 function App() {
   return (
