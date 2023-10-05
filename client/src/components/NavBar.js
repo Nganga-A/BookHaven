@@ -24,7 +24,6 @@
 // }
 
 // export default Navbar;
-import React from "react";
 import { Outlet, NavLink } from "react-router-dom";
 import "./Navbar.css"; // Import the CSS file
 
@@ -41,6 +40,7 @@ function Navbar() {
           <NavLink to="home">Home</NavLink>
           <NavLink to="readings">Readings</NavLink>
           <NavLink to="favourites">Favourites</NavLink>
+          <NavLink to="CategoryList">Categories</NavLink>
         </nav>
       </header>
       <main>

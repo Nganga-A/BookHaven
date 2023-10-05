@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios'; // Import Axios library
+import { useState, useEffect } from 'react';
+import axios from 'axios'; 
 import { useParams } from 'react-router-dom';
 
 function BookList() {
@@ -57,7 +57,7 @@ function BookList() {
           {favorites.map(favorite => (
             <div key={favorite.id} className="col-md-4">
               <div className="card mb-4" style={{ border: '1px solid #ddd', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' }}>
-                {/* fave books */}
+                {}
               </div>
             </div>
           ))}
