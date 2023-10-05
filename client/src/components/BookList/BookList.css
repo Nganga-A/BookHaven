@@ -39,6 +39,32 @@
     font-style: italic;
     font-size: 14px;
 }
+/* BookList.css */
+
+/* ... (other styles) */
+
+/* Button styles */
+.add-to-booklist-button {
+    background-color: #E0B75C; /* Button background color */
+    color: #fff; /* Text color */
+    padding: 0px 20px; /* Padding */
+    border: none; /* Remove border */
+    border-radius: 15px; /* Rounded corners */
+    cursor: pointer; /* Cursor style on hover */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s ease; /* Smooth color transition on hover */
+  
+    /* Center the text vertically and horizontally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Hover state */
+  .add-to-booklist-button:hover {
+    background-color: #efc0fe;; /* Darker background color on hover */
+  }
+  
 
 @media screen and (min-width: 600px){
     .booklist-content{
