@@ -1,36 +1,41 @@
 import React from 'react';
-// import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { AppProvider } from './context.'; // Remove the trailing period
+import { AppProvider } from './context'; // Removed the trailing period
 import './App.css';
-import Home from './pages/Home'; // Update import path
-import About from './pages/About'; // Update import path
+import Home from './pages/Home';
+import About from './pages/About';
 import BookList from './components/BookList/BookList';
 import BookDetails from './components/BookDetails/BookDetails';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import Navbar from './components/Navbar/Navbar'; // Imported Navbar once
 import Footer from './components/Footer';
-import './components/Footer.css'; 
-import Navbar from './components/Navbar/Navbar';
-import './components/Navbar/Navbar.css'; 
-
+import AddBook from './components/AddBook';
+import CategoryList from './components/CategoryList';
+import Favorites from './components/Favourites';
 
 function App() {
   return (
     <AppProvider>
       <BrowserRouter>
-      <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="book" element={<BookList />} />
-          <Route path="/book/:id" element={<BookDetails />} />
-          <Route path="/" element={<Login />} />
-          <Route path="/Signup" element={<Signup />} />
-        </Routes>
+        <div className="">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="book" element={<BookList />} />
+            <Route path="/book/:id" element={<BookDetails />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/categories" element={<CategoryList />} />
+            <Route path="/books" element={<BookList />} />
+            <Route path="/category/:categoryId" element={<CategoryList />} />
+            <Route path="/add-book" element={<AddBook />} />
+            <Route path="/favorites" element={<Favorites />} />
+          </Routes>
+          <Footer />
+        </div>
       </BrowserRouter>
-      <Footer />
-
     </AppProvider>
   );
 }
