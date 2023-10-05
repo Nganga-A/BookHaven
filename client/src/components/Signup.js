@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, Form, Button, CloseButton, Row, Col } from 'react-bootstrap';
+import { Card, Form, Button,  Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './style.css'
 
