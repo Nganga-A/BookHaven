@@ -15,10 +15,8 @@ import AddBook from './components/AddBook'
 
 function App() {
   return (
-    <div className="">
-      <Router>
-        {/* <Footer />  */}
-        <Navbar />
+    <AppProvider>
+      <BrowserRouter>
         <Routes>
           <Route path="/home" element={<Main />} />
           <Route path="/" element={<Login />} /> 
@@ -26,12 +24,9 @@ function App() {
           <Route path="/add-book" element={<AddBook />} />
         </Routes>
         
-      </Router>
-    </div>
+      </BrowserRouter>
+    </AppProvider>
   );
 }
 
 export default App;
-
-
-
