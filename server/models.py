@@ -37,7 +37,6 @@ class Book(db.Model, SerializerMixin):
     category = db.relationship('Category', back_populates='books')
     
     
-    
 
 class Favorite(db.Model, SerializerMixin):
     __tablename__ = 'favorites'
@@ -50,6 +49,7 @@ class Favorite(db.Model, SerializerMixin):
 
     user = db.relationship('User', back_populates='favorites')
     book = db.relationship('Book', back_populates='favorites')
+
 
 class Reading(db.Model, SerializerMixin):
     __tablename__ = 'readings'
@@ -70,7 +70,7 @@ class Category(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, unique=True)
-    cover_image = db.Column(db.String)  
+     
 
     books = db.relationship('Book', back_populates='category')
 
