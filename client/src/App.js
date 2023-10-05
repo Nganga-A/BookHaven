@@ -7,6 +7,8 @@ import React, { useState } from 'react'; // Import useState
 import { Route, Routes, BrowserRouter as Router, Navigate } from 'react-router-dom'; // Import Navigate
 import Main from './component/Main';
 import Navbar from './component/NavBar';
+import Home from './pages/Home';
+import BookDetails from './components/BookDetails/BookDetails'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './component/Navbar.css';
 import './component/Footer.css';
