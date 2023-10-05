@@ -3,7 +3,6 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 function CategoryList() {
-  // State variable to store the list of categories
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -19,11 +18,11 @@ function CategoryList() {
 
   return (
     <div className="container">
-      <h2 className="mt-4">Categories</h2>
+      <h2 className="mt-4">Categories Library</h2>
       <ul className="list-group">
         {categories.map(category => (
           <li key={category.id} className="list-group-item">
-            <Link to={`/category/${category.id}`}>{category.name}</Link> 
+            <Link to={`/category/${category.id}`}>{category.name}</Link>
           </li>
         ))}
       </ul>
