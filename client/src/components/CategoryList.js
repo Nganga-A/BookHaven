@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios'; 
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function CategoryList() {
   // State variable to store the list of categories
@@ -22,7 +23,7 @@ function CategoryList() {
       <ul className="list-group">
         {categories.map(category => (
           <li key={category.id} className="list-group-item">
-            <Link to={`/category/${category.id}`}>{category.name}</Link>
+            <Link to={`/category/${category.id}`}>{category.name}</Link> 
           </li>
         ))}
       </ul>
