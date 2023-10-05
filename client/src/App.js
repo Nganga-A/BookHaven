@@ -1,35 +1,35 @@
-
-// App.js
+import React from 'react';
+// import ReactDOM from 'react-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { AppProvider } from './context.'; // Remove the trailing period
 import './App.css';
-import React from "react";
-import { Route, Routes, BrowserRouter as Router } from "react-router-dom"; // Import BrowserRouter as Router
-import Main from './components/Main';
-import Navbar from './components/NavBar'; 
- import Footer from './components/Footer';
- import './components/Footer.css'; 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './component/Navbar.css'; 
-import './component/Footer.css'; 
-import Login from './components/Login'
+import Home from './pages/Home'; // Update import path
+import About from './pages/About'; // Update import path
+import BookList from './components/BookList/BookList';
+import BookDetails from './components/BookDetails/BookDetails';
+import Login from './components/Login';
 import Signup from './components/Signup';
+import Footer from './components/Footer';
+import './components/Footer.css'; 
+
 
 function App() {
   return (
-    <div className="">
-      <Router>
-        {/* <Footer />  */}
-        <Navbar />
+    <AppProvider>
+      <BrowserRouter>
         <Routes>
-          <Route path="/home" element={<Main />} />
-          <Route path="/" element={<Login />} /> 
-          <Route path="/Signup" element={<Signup />} /> 
+          <Route path="/" element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="book" element={<BookList />} />
+          <Route path="/book/:id" element={<BookDetails />} />
+          <Route path="/" element={<Login />} />
+          <Route path="/Signup" element={<Signup />} />
         </Routes>
-      </Router>
-    </div>
+      </BrowserRouter>
+      <Footer />
+
+    </AppProvider>
   );
 }
 
 export default App;
-
-
-

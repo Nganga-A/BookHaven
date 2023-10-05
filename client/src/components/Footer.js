@@ -1,150 +1,76 @@
-// import React from 'react';
-// import "./Footer.css"; // Import the CSS file
+import React from "react";
+import "./Footer.css";
 
-// import {
-//   MDBFooter,
-//   MDBContainer,
-//   // MDBCol,
-//   // MDBRow,
-//   MDBIcon,
-//   MDBBtn
-// } from 'mdb-react-ui-kit';
-
-// export default function App() {
-//   return (
-//     <MDBFooter className='text-center text-white' style={{ backgroundColor: '#f1f1f1' }}>
-//       <MDBContainer className='pt-4'>
-//         <section className='mb-4'>
-//           <MDBBtn
-//             rippleColor="dark"
-//             color='link'
-//             floating
-//             size="lg"
-//             className='text-dark m-1'
-//             href='#!'
-//             role='button'
-//           >
-//             <MDBIcon fab className='fab fa-facebook-f' />
-//           </MDBBtn>
-
-//           <MDBBtn
-//             rippleColor="dark"
-//             color='link'
-//             floating
-//             size="lg"
-//             className='text-dark m-1'
-//             href='#!'
-//             role='button'
-//           >
-//             <MDBIcon fab className='fa-twitter' />
-//           </MDBBtn>
-
-//           <MDBBtn
-//             rippleColor="dark"
-//             color='link'
-//             floating
-//             size="lg"
-//             className='text-dark m-1'
-//             href='#!'
-//             role='button'
-//           >
-//             <MDBIcon fab className='fa-google' />
-//           </MDBBtn>
-
-//           <MDBBtn
-//             rippleColor="dark"
-//             color='link'
-//             floating
-//             size="lg"
-//             className='text-dark m-1'
-//             href='#!'
-//             role='button'
-//           >
-//             <MDBIcon fab className='fa-instagram' />
-//           </MDBBtn>
-
-//           <MDBBtn
-//             rippleColor="dark"
-//             color='link'
-//             floating
-//             size="lg"
-//             className='text-dark m-1'
-//             href='#!'
-//             role='button'
-//           >
-//             <MDBIcon fab className='fa-linkedin' />
-//           </MDBBtn>
-
-//           <MDBBtn
-//             rippleColor="dark"
-//             color='link'
-//             floating
-//             size="lg"
-//             className='text-dark m-1'
-//             href='#!'
-//             role='button'
-//           >
-//             <MDBIcon fab className='fa-github' />
-//           </MDBBtn>
-//         </section>
-//       </MDBContainer>
-
-//       <div className='text-center text-dark p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
-//         © 2020 Copyright:
-//         <a className='text-dark' href='https://mdbootstrap.com/'>
-//           MDBootstrap.com
-//         </a>
-//       </div>
-//     </MDBFooter>
-//   );
-// }
-
-import React from 'react';
-import {
-  MDBFooter,
-  MDBContainer,
-  MDBCol,
-  MDBRow,
-  MDBIcon,
-  MDBBtn
-} from 'mdb-react-ui-kit';
-
-export default function App() {
+function Footer() {
   return (
-    <MDBFooter className='bg-dark text-center text-white'>
-      <MDBContainer className='p-4 pb-0'>
-        <section className='mb-4'>
-          <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
-            <MDBIcon fab icon='facebook-f' />
-          </MDBBtn>
+  <div className="main-footer">
+    <div className="container1">
+        <div className="row">
+            {/* Column1 */}
+            <div className="col">
+                <h4>Contacts</h4>
+                <ul className="list-unstyled">
+                <li><a href="#">+2540724678</a></li>
+                <li><a href="#">Nairobi, Kenya</a></li>
+                <li><a href="#">Ngong Road</a></li>
 
-          <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
-            <MDBIcon fab icon='twitter' />
-          </MDBBtn>
+                </ul>
+            </div>
+            {/* Column2 */}
+            {/* <div className="col">
+                <h4>Stuff</h4>
+                <ul className="list-unstyled">
+                <li><a href="#">John doe</a></li>
+                <li><a href="#">John doe</a></li>
+                <li><a href="#">John doe</a></li>
+                </ul>
+            </div> */}
+            {/* Column3 */}
+            <div className="col">
+                <h4>Services</h4>
+                <ul className="list-unstyled">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Readings</a></li>
+                <li><a href="#">Favourites</a></li>
+                </ul>                             
+            </div>
+              
+             {/* Column4 */}
+          <div className="col">
+            <h4>Socials</h4>
+            <ul className="list-unstyled socialicons">
+              <li>
+                <a href="#" className="social-icon">
+                  <i className="fab fa-instagram"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="social-icon">
+                  <i className="fab fa-facebook"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="social-icon">
+                  <i className="fab fa-twitter"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
 
-          <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
-            <MDBIcon fab icon='google' />
-          </MDBBtn>
-          <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
-            <MDBIcon fab icon='instagram' />
-          </MDBBtn>
+        </div>
+        <div>
+        <hr />
+        <div className="row1">
+            <p className="col-sm">
+                &copy;{new Date().getFullYear()} Book Haven LTD | All rights reserved | Terms Of Services | Privacy
 
-          <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
-            <MDBIcon fab icon='linkedin-in' />
-          </MDBBtn>
+            </p>
+            </div>
 
-          <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
-            <MDBIcon fab icon='github' />
-          </MDBBtn>
-        </section>
-      </MDBContainer>
-
-      <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
-        © 2020 Copyright:
-        <a className='text-white' href='https://mdbootstrap.com/'>
-          MDBootstrap.com
-        </a>
-      </div>
-    </MDBFooter>
-  );
+        </div>
+    </div>
+    </div>
+  )
 }
+
+export default Footer;
