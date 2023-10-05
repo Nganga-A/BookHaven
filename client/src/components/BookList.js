@@ -1,30 +1,18 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios'; 
-import { useParams } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function BookList() {
-  const { categoryId } = useParams();
-  const [books, setBooks] = useState([]); // State variable to store books
-  const [favorites, setFavorites] = useState([]); // State variable to store favorites
+  const [books, setBooks] = useState([]);
 
   useEffect(() => {
-    // Fetch the list of books for the specified category from the Flask API
-    axios.get(`/category/${categoryId}/books`)
+    axios.get('/category/<categoryId>/books') 
       .then(response => {
         setBooks(response.data);
       })
       .catch(error => {
         console.error('Error fetching books:', error);
       });
-  }, [categoryId]);
-
-  // Function to add a book to favorites
-  const addToFavorites = (bookId) => {
-    const bookToAdd = books.find(book => book.id === bookId);
-    if (bookToAdd) {
-      setFavorites([...favorites, bookToAdd]);
-    }
-  };
+  }, []);
 
   return (
     <div>
@@ -41,7 +29,6 @@ function BookList() {
                 <p className="card-text" style={{ fontSize: '1rem', color: '#555' }}>Author(s): {book.author}</p>
                 <button
                   className="btn btn-primary"
-                  onClick={() => addToFavorites(book.id)}
                   style={{ backgroundColor: '#007bff', color: '#fff', border: 'none', cursor: 'pointer' }}
                 >
                   Add to Favorites
@@ -53,15 +40,7 @@ function BookList() {
       </div>
       <div className="favorites-section">
         <h2>Favorites</h2>
-        <div className="row">
-          {favorites.map(favorite => (
-            <div key={favorite.id} className="col-md-4">
-              <div className="card mb-4" style={{ border: '1px solid #ddd', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' }}>
-                {}
-              </div>
-            </div>
-          ))}
-        </div>
+        {}
       </div>
     </div>
   );
