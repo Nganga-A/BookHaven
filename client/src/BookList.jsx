@@ -7,40 +7,40 @@ function BookList() {
   const [books, setBooks] = useState([]);
   const [favorites, setFavorites] = useState([]);
 
-  useEffect(() => {
-    // Fetch book data from the Google Books API
-    const apiKey = 'AIzaSyAe_jl7NUtfnv4HMwGm5YaYAD8F8D2XiU0';
-    const query = 'Harry Potter'; // Your search query
-    const apiUrl = `https://www.googleapis.com/books/v1/volumes?q=${query}&key=${apiKey}`;
+  // useEffect(() => {
+  //   // Fetch book data from the Google Books API
+  //   const apiKey = 'AIzaSyAe_jl7NUtfnv4HMwGm5YaYAD8F8D2XiU0';
+  //   const query = 'Harry Potter'; // Your search query
+  //   const apiUrl = `https://www.googleapis.com/books/v1/volumes?q=${query}&key=${apiKey}`;
 
-    fetch(apiUrl)
-      .then(response => response.json())
-      .then(data => {
-        if (data.items) {
-          // Extract relevant book data (title, authors, image links)
-          const bookData = data.items.map(item => {
-            const volumeInfo = item.volumeInfo;
-            return {
-              id: item.id,
-              title: volumeInfo.title,
-              authors: volumeInfo.authors,
-              image: volumeInfo.imageLinks?.thumbnail,
-            };
-          });
-          setBooks(bookData);
-        }
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-      });
-  }, [categoryId]);
+  //   fetch(apiUrl)
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       if (data.items) {
+  //         // Extract relevant book data (title, authors, image links)
+  //         const bookData = data.items.map(item => {
+  //           const volumeInfo = item.volumeInfo;
+  //           return {
+  //             id: item.id,
+  //             title: volumeInfo.title,
+  //             authors: volumeInfo.authors,
+  //             image: volumeInfo.imageLinks?.thumbnail,
+  //           };
+  //         });
+  //         setBooks(bookData);
+  //       }
+  //     })
+  //     .catch(error => {
+  //       console.error('Error fetching data:', error);
+  //     });
+  // }, [categoryId]);
 
-  const addToFavorites = (bookId) => {
-    const bookToAdd = books.find(book => book.id === bookId);
-    if (bookToAdd) {
-      setFavorites([...favorites, bookToAdd]);
-    }
-  };
+  // const addToFavorites = (bookId) => {
+  //   const bookToAdd = books.find(book => book.id === bookId);
+  //   if (bookToAdd) {
+  //     setFavorites([...favorites, bookToAdd]);
+  //   }
+  // };
 
   return (
     <div>
