@@ -6,13 +6,24 @@
 }
 .about-title{
     margin: 1rem 0;
+    color: rgb(255, 192, 84);
+
 }
 .about-img img{
-    max-width: 520px;
+    /* max-width: 520px; */
+    width: 75%;
+    height: 450px;
+    background-color: #ccc;
+    border-radius: 10px;
 }
 .about-text p{
-    margin: 1.8rem 0;
-    opacity: 0.8;
+    /* margin: 1.8rem 0;
+    opacity: 0.8; */
+    padding-top: 1rem;
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 400;
+    color: #000000;
 }
 
 @media screen and (min-width: 800px){

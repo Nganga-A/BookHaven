@@ -11,12 +11,15 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Footer from './components/Footer';
 import './components/Footer.css'; 
+import Navbar from './components/Navbar/Navbar';
+import './components/Navbar/Navbar.css'; 
 
 
 function App() {
   return (
     <AppProvider>
       <BrowserRouter>
+      <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="about" element={<About />} />
