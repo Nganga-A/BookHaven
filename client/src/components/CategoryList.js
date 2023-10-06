@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from './Api';
 import { Link } from 'react-router-dom';
 
 function CategoryList() {
@@ -7,7 +7,7 @@ function CategoryList() {
 
   useEffect(() => {
     // Fetch the list of categories from the Flask API
-    axios.get('/categories')
+    api.get('/categories')
       .then(response => {
         setCategories(response.data);
       })
@@ -22,7 +22,9 @@ function CategoryList() {
       <ul className="list-group">
         {categories.map(category => (
           <li key={category.id} className="list-group-item">
-            <Link to={`/category/${category.id}`}>{category.name}</Link>
+            <Link to={`/category/${category.id}`} className="text-decoration-none text-dark">
+              {category.name}
+            </Link>
           </li>
         ))}
       </ul>
