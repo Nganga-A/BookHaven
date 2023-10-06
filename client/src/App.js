@@ -13,7 +13,7 @@ import Footer from './components/Footer';
 import AddBook from './components/AddBook';
 import CategoryList from './components/CategoryList';
 import Favorites from './components/Favourites';
-// import Header from './components/Header/Header';
+import Header from './components/Header/Header';
 
 
 
