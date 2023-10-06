@@ -15,15 +15,13 @@ function ForgotPassword() {
     e.preventDefault();
     try {
       // Send a POST request to your backend to initiate password reset using the username
-      const response = await fetch('', {
-        method: 'POST',
+      const response = await axios.post('', { username }, {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ username }), // Send the username
       });
 
-      if (response.ok) {
+      if (response.status === 200) {
         // Provide feedback to the user about the password reset initiation
         setMessage('Password reset initiated for the provided username.');
       } else {

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Card, Form, Button,  Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './style.css'
+import axios from 'axios'
 
 function Signup() {
   const [formData, setFormData] = useState({
@@ -19,7 +20,7 @@ function Signup() {
     e.preventDefault();
     try {
       // Send formData to the backend (Flask) for registration using Axios
-      const response = await axios.post('', formData);
+      const response = await axios.post('/register', formData);
 
       if (response.status === 200) {
         // Registration was successful

@@ -18,15 +18,9 @@ import Footer from './components/Footer';
 import AddBook from './components/AddBook';
 import CategoryList from './components/CategoryList';
 import Favorites from './components/Favourites';
+import ForgotPassword from './components/ForgotPassword';
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // State to track login status
-
-  const handleLogin = () => {
-    // Replace this with your actual authentication logic
-    // Set isLoggedIn to true if login is successful
-    setIsLoggedIn(true);
-  };
 
   return (
     <div className="">
