@@ -34,7 +34,7 @@ const Navbar = () => {
 
             </li>
             <li>
-            <Link to = "favourites" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>favourites</Link>
+            <Link to = "favourites" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>Favourites</Link>
 
             </li>
             <li>
