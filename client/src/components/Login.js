@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Card, Form, Button } from 'react-bootstrap'
 import './style.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 import { Link } from 'react-router-dom'
 
 function Login() {
