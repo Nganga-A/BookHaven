@@ -1,7 +1,6 @@
 import React from 'react';
-// import ReactDOM from 'react-dom';
-import {  Routes, Route } from 'react-router-dom';
-import { AppProvider } from './context.'; // Remove the trailing period
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { AppProvider } from './context.js';
 import './App.css';
 import React, { useState } from 'react'; // Import useState
 import { Route, Routes, BrowserRouter as Router, Navigate } from 'react-router-dom'; // Import Navigate
@@ -14,7 +13,11 @@ import './component/Navbar.css';
 import './component/Footer.css';
 import Login from './components/Login';
 import Signup from './components/Signup';
-import ForgotPassword from './components/ForgotPassword';
+import Navbar from './components/Navbar/Navbar'; 
+import Footer from './components/Footer';
+import AddBook from './components/AddBook';
+import CategoryList from './components/CategoryList';
+import Favorites from './components/Favourites';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false); // State to track login status
