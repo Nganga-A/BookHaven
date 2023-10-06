@@ -71,6 +71,7 @@ h1 {
   }
   span{
     justify-content: space-between;
+    color:#e083ff;
   }
 
 @media screen and (min-width: 992px){

@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <nav className='navbar' id = "navbar">
         <h1>
-            Book <span>Haven</span>
+            Book <span>.Haven</span>
           </h1>
       <div className='container navbar-content flex'>
         <div className='brand-and-toggler flex flex-sb'>
