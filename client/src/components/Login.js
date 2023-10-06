@@ -14,10 +14,22 @@ function Login() {
     setLoginData({ ...loginData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Send loginData to the backend (Flask) for authentication
-    // You can use Axios or fetch to make an API call to your Flask server.
+    try {
+      // Send loginData to the backend (Flask) for authentication using Axios
+      const response = await axios.post('/your-existing-login-route', loginData);
+
+      if (response.status === 200) {
+        // Set isLoggedIn to true if login is successful
+        onLogin();
+        history.push('/home'); // Redirect to the landing page
+      } else {
+        console.error('Authentication failed');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   return (

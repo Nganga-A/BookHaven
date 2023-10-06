@@ -15,10 +15,23 @@ function Signup() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Send formData to the backend (Flask) for registration
-    // You can use Axios or fetch to make an API call to your Flask server.
+    try {
+      // Send formData to the backend (Flask) for registration using Axios
+      const response = await axios.post('/your-registration-route', formData);
+
+      if (response.status === 200) {
+        // Registration was successful
+        // Redirect to the login page or perform other actions
+        console.log('Registration successful');
+      } else {
+        // Handle registration failure (e.g., display an error message)
+        console.error('Registration failed');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   return (
@@ -67,7 +80,7 @@ function Signup() {
                   </Col>
                 </Row>
                 <div className='d-grid mt-2'>
-                  <Button type="submit">Submit</Button>
+                  <Button type="submit" className="btn btn-primary">Submit</Button>
                 </div>
                 <p className='text-end mt-2'>
                   Already Registered<Link to='/' className='ms-2'>Login in</Link>
