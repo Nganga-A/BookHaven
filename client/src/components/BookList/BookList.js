@@ -4,6 +4,8 @@ import Book from "../BookList/Book";
 import Loading from "../Loader/Loader";
 import coverImg from "../../images/cover_not_found.jpg";
 import "./BookList.css";
+import Header from '../Header/Header'; 
+
 
 //https://covers.openlibrary.org/b/id/240727-S.jpg
 
@@ -22,6 +24,7 @@ const BookList = () => {
 
   return (
     <section className='booklist'>
+      <Header />
       <div className='container'>
         <div className='section-title'>
           <h2>{resultTitle}</h2>
