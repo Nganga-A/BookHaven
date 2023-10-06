@@ -31,7 +31,7 @@ class Book(db.Model, SerializerMixin):
     publication_year = db.Column(db.Integer)
     cover_image = db.Column(db.String)
     category_id = db.Column(db.Integer, db.ForeignKey('categories.id'))
-
+    
     favorites = db.relationship('Favorite', back_populates='book')
     readings = db.relationship('Reading', back_populates='book')
     category = db.relationship('Category', back_populates='books')
