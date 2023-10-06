@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from './Api';
 
 function Favorites() {
   const [favorites, setFavorites] = useState([]);
@@ -7,7 +7,7 @@ function Favorites() {
 
   useEffect(() => {
     // Fetch the list of favorites when the component mounts
-    axios.get('/favorites')
+    api.get('/favorites')
       .then(response => {
         setFavorites(response.data);
       })
@@ -18,7 +18,7 @@ function Favorites() {
 
   const addToFavorites = () => {
     const userId = 1; 
-    axios.post('/favorites', { user_id: userId, book_id: newFavoriteBookId })
+    api.post('/favorites', { user_id: userId, book_id: newFavoriteBookId })
       .then(response => {
         setFavorites([...favorites, response.data]);
         setNewFavoriteBookId('');
@@ -30,19 +30,20 @@ function Favorites() {
 
   return (
     <div>
-      <h2>My Favorites</h2>
-      <div>
+      <h2 className="mt-4">My Favorites</h2>
+      <div className="mb-3">
         <input
           type="text"
           placeholder="Enter book ID"
           value={newFavoriteBookId}
           onChange={(e) => setNewFavoriteBookId(e.target.value)}
+          className="form-control"
         />
-        <button onClick={addToFavorites}>Add to Favorites</button>
+        <button onClick={addToFavorites} className="btn btn-primary mt-2">Add to Favorites</button>
       </div>
-      <ul>
+      <ul className="list-group">
         {favorites.map(favorite => (
-          <li key={favorite.id}>
+          <li key={favorite.id} className="list-group-item">
             Book ID: {favorite.book_id}
           </li>
         ))}
