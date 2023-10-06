@@ -1,17 +1,19 @@
-# BookHaven
-# Explore the World Through Books
+# BookHaven  ![](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue) [![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/) ![RESTful API](https://img.shields.io/badge/RESTful%20API-0078D4?style=for-the-badge&logo=api&logoColor=white) ![Bootstrap Logo (Alternative)](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white) ![Axios Logo (Alternative)](https://img.shields.io/badge/Axios-0078D4?style=for-the-badge&logo=axios&logoColor=white)
+
+
 
 ## Overview
 
 Explore the World Through Books is a web application that allows users to discover, manage, and keep track of books and publications. Whether you're an avid reader or simply looking to organize your reading list, this app provides a user-friendly platform to explore, categorize, and remember books of interest.
+
 
 ## Features
 
 - User authentication: Create an account or log in to access the website.
 - Browse and search: Explore a diverse range of books and publications.
 - Book details: Access detailed information about each book or publication.
-- Reading list: Keep track of books you're currently reading and those you've completed.
 - Favorites/Wishlist: Create a list of your favorite books or those you want to read in the future.
+
 
 ## Technologies Used
 
@@ -20,7 +22,7 @@ Explore the World Through Books is a web application that allows users to discov
 - React for the user interface.
 - React Router for handling navigation.
 - Axios for making API requests.
-- (Optional) Bootstrap/Tailwind for responsive styling.
+- Bootstrap for responsive styling.
 
 ### Back-end
 
@@ -36,70 +38,49 @@ Explore the World Through Books is a web application that allows users to discov
 
 1. Clone the repository to your local machine:
 
-git clone https://github.com/your-username/explore-the-world-through-books.git
-
-css
-Copy code
+`git clone git@github.com:Nganga-A/BookHaven.git`
 
 2. Navigate to the project directory:
 
-cd explore-the-world-through-books
+`cd BookHaven`
 
-arduino
-Copy code
 
 3. Set up the virtual environment (recommended):
 
-python -m venv venv
-source venv/bin/activate
-
-markdown
-Copy code
+`pipenv install`
+`pipenv shell`
 
 4. Install the required packages:
 
-pip install -r requirements.txt
+  `pip install -r requirements.txt`
 
-markdown
-Copy code
 
 5. Start the backend server:
 
-python app.py
+`python app.py`
 
-markdown
-Copy code
 
-6. Navigate to the `client` directory:
+6. Navigate to the client directory:
 
-cd client
+`cd client`
 
-markdown
-Copy code
 
 7. Install the client-side dependencies:
 
-npm install
+`npm install`
 
-markdown
-Copy code
 
 8. Start the React development server:
 
-npm start
+`npm start`
 
-markdown
-Copy code
-
-9. Open your web browser and visit [http://localhost:3000](http://localhost:3000) to access the application.
 
 ## Project Structure
 
 - `app.py`: Flask backend application.
 - `client/`: React frontend code.
-- `api/`: Backend API routes and database models.
+- `models.py` `app.py`: Backend API routes and database models.
 - `static/`: Static assets like images and styles.
-- `templates/`: HTML templates (if applicable).
 - `requirements.txt`: List of Python dependencies.
 - `README.md`: Project documentation (you're reading it!).
 
@@ -111,6 +92,3 @@ Contributions to this project are welcome! If you'd like to contribute, please f
 
 This project is licensed under the [MIT License](LICENSE).
 
----
-
-**Note:** This README is a sample and should be customized to fit your project's
