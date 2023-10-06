@@ -48,8 +48,17 @@
 .nav-link{
 padding : 0 10px 0 10px;
 padding: 10px 20px;
+color: white;
 
-
+}
+.nav-link1 {
+    padding : 0 10px 0 10px;
+    padding: 10px 20px;
+    color: #161616;
+    text-decoration:underline;
+    font-size: medium;
+    font-weight: bolder;
+    
 
 }
 .nav-link:hover{
