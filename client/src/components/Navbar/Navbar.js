@@ -30,11 +30,11 @@ const Navbar = () => {
               <Link to = "about" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>About</Link>
             </li>
             <li>
-            <Link to = "categories" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>Categories</Link>
+            <Link to = "categories" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>CategoryList</Link>
 
             </li>
             <li>
-            <Link to = "favourite" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>favourite</Link>
+            <Link to = "favourites" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>favourites</Link>
 
             </li>
             {/* <li>

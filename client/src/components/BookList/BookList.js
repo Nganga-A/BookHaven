@@ -28,11 +28,15 @@ const BookList = () => {
         </div>
         <div className='booklist-content grid'>
           {
-            booksWithCovers.slice(0, 30).map((item, index) => {
+            // booksWithCovers.slice(0, 30).map((item, index) => {
+              booksWithCovers.slice(0, 20).map((item, index) => {
+
               return (
                 <Book key = {index} {...item} />
               )
             })
+
+            
           }
         </div>
       </div>
@@ -41,3 +45,4 @@ const BookList = () => {
 }
 
 export default BookList
+
