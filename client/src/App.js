@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { AppProvider } from './context'; // Removed the trailing period
+import { AppProvider } from './context.'; // Removed the trailing period
 import './App.css';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -13,6 +13,9 @@ import Footer from './components/Footer';
 import AddBook from './components/AddBook';
 import CategoryList from './components/CategoryList';
 import Favorites from './components/Favourites';
+// import Header from './components/Header/Header';
+
+
 
 function App() {
   return (

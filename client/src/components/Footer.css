@@ -56,7 +56,7 @@
 }
 
 .col h4 {
-  color: #8D27AE;
+  color: #f1b127;
   margin-bottom: 10px;
   font-weight: bold;
   text-align: center;
@@ -91,7 +91,7 @@
   left: 0;
   width: 100%;
   height: 2px; 
-  background-color:  #8D27AE;
+  background-color:  #E0B75C;
 
   visibility: hidden;
   transform: scaleX(0);
