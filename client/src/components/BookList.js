@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from './Api';
 import { useParams } from 'react-router-dom';
 
 function BookList() {
@@ -8,7 +8,7 @@ function BookList() {
 
   useEffect(() => {
     // Fetch the list of books in the specified category from the Flask API
-    axios.get(`/category/${categoryId}/books`)
+    api.get(`/category/${categoryId}/books`)
       .then(response => {
         setBooks(response.data);
       })
@@ -18,8 +18,8 @@ function BookList() {
   }, [categoryId]);
 
   return (
-    <div>
-      <h2>Books in this Category</h2>
+    <div className="container">
+      <h2 className="mt-4">Books in this Category</h2>
       <div className="row">
         {books.map(book => (
           <div key={book.id} className="col-md-4">
