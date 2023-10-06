@@ -15,7 +15,7 @@ function ForgotPassword() {
     e.preventDefault();
     try {
       // Send a POST request to your backend to initiate password reset using the username
-      const response = await fetch('/api/reset-password', {
+      const response = await fetch('', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

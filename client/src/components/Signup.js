@@ -19,7 +19,7 @@ function Signup() {
     e.preventDefault();
     try {
       // Send formData to the backend (Flask) for registration using Axios
-      const response = await axios.post('/your-registration-route', formData);
+      const response = await axios.post('', formData);
 
       if (response.status === 200) {
         // Registration was successful
