@@ -40,6 +40,11 @@
     ]
   },
   "devDependencies": {
+<<<<<<< HEAD
     "eslint-plugin-react-refresh": "^0.4.3"
+=======
+    "babel-eslint": "^10.1.0",
+    "eslint": "^8.50.0"
+>>>>>>> cb05837 (deleted .eslintrc.cjs)
   }
 }
