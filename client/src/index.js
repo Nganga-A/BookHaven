@@ -1,11 +1,16 @@
+<<<<<<< HEAD
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+=======
+import { createRoot } from 'react-dom';
+>>>>>>> a688c48 (Sucessfully compiled &  fixed webpack errors)
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import {BrowserRouter} from 'react-router-dom';
 
+<<<<<<< HEAD
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,3 +23,7 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+=======
+const root = createRoot(document.getElementById('root'));
+root.render(<App />);
+>>>>>>> a688c48 (Sucessfully compiled &  fixed webpack errors)
