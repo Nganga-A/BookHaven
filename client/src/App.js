@@ -1,6 +1,6 @@
 import React from 'react';
 // import ReactDOM from 'react-dom';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import {  Routes, Route } from 'react-router-dom';
 import { AppProvider } from './context.'; // Remove the trailing period
 import './App.css';
 import React, { useState } from 'react'; // Import useState
