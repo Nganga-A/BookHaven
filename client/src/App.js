@@ -8,7 +8,7 @@ import BookList from './components/BookList/BookList';
 import BookDetails from './components/BookDetails/BookDetails';
 import Login from './components/Login';
 import Signup from './components/Signup';
-import Navbar from './components/Navbar/Navbar'; // Imported Navbar once
+import Navbar from './components/Navbar/Navbar'; 
 import Footer from './components/Footer';
 import AddBook from './components/AddBook';
 import CategoryList from './components/CategoryList';
