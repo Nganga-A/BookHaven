@@ -20,7 +20,7 @@ function Signup() {
     e.preventDefault();
     try {
       // Send formData to the backend (Flask) for registration using Axios
-      const response = await axios.post('/register', formData);
+      const response = await axios.post('/signup', formData);
 
       if (response.status === 200) {
         // Registration was successful
@@ -84,7 +84,7 @@ function Signup() {
                   <Button type="submit" className="btn btn-primary">Submit</Button>
                 </div>
                 <p className='text-end mt-2'>
-                  Already Registered<Link to='/' className='ms-2'>Login in</Link>
+                  Already Registered<Link to='/login' className='ms-2'>Login in</Link>
                 </p>
               </Form>
             </Card.Body>

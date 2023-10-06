@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Card, Form, Button } from 'react-bootstrap';
 import './style.css';
 import { Link } from 'react-router-dom';
+import axios from 'axios'
 
 function ForgotPassword() {
   const [username, setUsername] = useState(''); // State variable for the username
@@ -14,13 +15,14 @@ function ForgotPassword() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Send a POST request to your backend to initiate password reset using the username
-      const response = await axios.post('', { username }, {
+      const response = await axios.post('/forgotpassword', {
+        username: loginData.username,
+      }, {
         headers: {
           'Content-Type': 'application/json',
         },
       });
-
+  
       if (response.status === 200) {
         // Provide feedback to the user about the password reset initiation
         setMessage('Password reset initiated for the provided username.');
@@ -32,6 +34,7 @@ function ForgotPassword() {
       console.error('Error:', error);
     }
   };
+  
 
   return (
     <div className='login template d-flex justify-content-center align-items-center vh-100 bg-primary'>

@@ -19,12 +19,12 @@ function Login() {
     e.preventDefault();
     try {
       // Send loginData to the backend (Flask) for authentication using Axios
-      const response = await axios.post('', loginData);
+      const response = await axios.post('/login', loginData);
 
       if (response.status === 200) {
-        // Set isLoggedIn to true if login is successful
-        onLogin();
-        history.push('/home'); // Redirect to the landing page
+        console.log
+       
+       
       } else {
         console.error('Authentication failed');
       }

@@ -1,11 +1,13 @@
 import random
 import requests
 from flask import Flask, request, jsonify
-from flask_restful import Resource, Api
+from flask_restful import Resource, Api, reqparse
 from flask_migrate import Migrate
 from models import db, User, Book, Favorite, Reading, Category
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
 from bcrypt import hashpw, gensalt
+import secrets
+import string
 
 app = Flask(__name__)
 api = Api(app)
@@ -202,7 +204,57 @@ class ProtectedResource(Resource):
         current_user_id = get_jwt_identity()
         favorites = Favorite.query.filter_by(user_id=current_user_id).all()
         
+# Generate a secure reset token
+def generate_reset_token():
+    token = ''.join(secrets.choice(string.ascii_letters + string.digits) for _ in range(32))
+    return token
 
+# Resource for initiating password reset
+class ForgotPasswordResource(Resource):
+    def post(self):
+        parser = reqparse.RequestParser()
+        parser.add_argument('username', type=str, required=True, help='Username is required')
+        args = parser.parse_args()
+
+        username = args['username']
+        user = User.query.filter_by(username=username).first()
+
+        if not user:
+            return {'error': 'Username not found'}, 404
+
+        reset_token = generate_reset_token()
+        user.reset_token = reset_token
+        db.session.commit()
+
+        return {'reset_token': reset_token}, 200
+
+# Resource for resetting the password
+class ResetPasswordResource(Resource):
+    def post(self):
+        parser = reqparse.RequestParser()
+        parser.add_argument('username', type=str, required=True, help='Username is required')
+        parser.add_argument('reset_token', type=str, required=True, help='Reset token is required')
+        parser.add_argument('new_password', type=str, required=True, help='New password is required')
+        args = parser.parse_args()
+
+        username = args['username']
+        reset_token = args['reset_token']
+        new_password = args['new_password']
+
+        user = User.query.filter_by(username=username, reset_token=reset_token).first()
+
+        if not user:
+            return {'error': 'Invalid username or reset token'}, 401
+
+        # Update the user's password and reset the reset_token
+        user.password = new_password
+        user.reset_token = None
+        db.session.commit()
+
+        return {'message': 'Password reset successfully'}, 200
+
+api.add_resource(ForgotPasswordResource, '/forgotpassword')
+api.add_resource(ResetPasswordResource, '/reset-password')
 
 
 api.add_resource(HomeResource, '/')
@@ -212,7 +264,7 @@ api.add_resource(CategoriesResource, '/categories')
 api.add_resource(CategoryBooksResource, '/category/<int:category_id>/books')
 api.add_resource(ReadingsResource, '/readings')
 api.add_resource(FavoritesResource, '/favorites')
-api.add_resource(UserRegistrationResource, '/register')
+api.add_resource(UserRegistrationResource, '/signup')
 api.add_resource(UserLoginResource, '/login')
 api.add_resource(ProtectedResource, '/favorites', '/readings')
 
