@@ -18,11 +18,18 @@ function Login() {
     setLoginData({ ...loginData, [name]: value });
   };
 
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   // Send loginData to the backend (Flask) for authentication
+  //   // You can use Axios or fetch to make an API call to your Flask server.
+  // };
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log('Submit button clicked'); // Add this line for debugging
     // Send loginData to the backend (Flask) for authentication
     // You can use Axios or fetch to make an API call to your Flask server.
   };
+  
 
   return (
     <div className='login template d-flex justify-content-center align-items-center vh-100 bg-primary'>
