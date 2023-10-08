@@ -20,7 +20,6 @@ Explore the World Through Books is a web application that allows users to discov
 ### Front-end
 
 - React for the user interface.
-- React Router for handling navigation.
 - Axios for making API requests.
 - Bootstrap for responsive styling.
 
@@ -83,6 +82,32 @@ Explore the World Through Books is a web application that allows users to discov
 - `static/`: Static assets like images and styles.
 - `requirements.txt`: List of Python dependencies.
 - `README.md`: Project documentation (you're reading it!).
+
+
+## API Routes
+
+Our Flask API provides the following routes, ensuring they return JSON data in the specified format:
+
+### Users
+
+- **GET /users**: Retrieve a list of all users.
+- **POST /users**: Create a new user listing.
+- **GET /user/:id**: Get details of a specific user.
+
+### Book Categories
+
+- **GET /categories**: Retrieve a list of all reviews.
+- **GET /category/id**: Get details of a specific book category.
+
+
+### Favorites
+
+- **GET /favorites**: Retrieve a list of all favorite books.
+- **POST /favorites**: Add a book to favorite listing.
+- **DELETE /favorites/:id**: remove a book from favorites
+
+
+
 
 ## Contributing
 
