@@ -73,7 +73,7 @@ function Favorites() {
   }, []);
 
   const addToFavorites = () => {
-    const userId = 1; 
+    const userId = 1;
     api.post('/favorites', { user_id: userId, book_id: newFavoriteBookId })
       .then(response => {
         setFavorites([...favorites, response.data]);
@@ -85,8 +85,8 @@ function Favorites() {
   };
 
   return (
-    <div className="container mt-4">
-      <h2>My Favourites</h2>
+    <div className="container">
+      <h2 className="mt-4">My Favorites</h2>
       <div className="mb-3">
         <input
           type="text"
@@ -95,7 +95,7 @@ function Favorites() {
           onChange={(e) => setNewFavoriteBookId(e.target.value)}
           className="form-control"
         />
-        <button onClick={addToFavorites} className="btn btn-primary mt-2">Add to Favourites</button>
+        <button onClick={addToFavorites} className="btn btn-primary mt-2">Add to Favorites</button>
       </div>
       <ul className="list-group">
         {favorites.map(favorite => (
@@ -109,3 +109,4 @@ function Favorites() {
 }
 
 export default Favorites;
+
