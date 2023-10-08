@@ -14,7 +14,8 @@
     width: 75%;
     height: 450px;
     background-color: #ccc;
-    border-radius: 10px;
+    border-radius: 5px;
+    margin-bottom: 50px;
 }
 .about-text p{
     /* margin: 1.8rem 0;
