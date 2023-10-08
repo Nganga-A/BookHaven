@@ -12,7 +12,7 @@ import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer';
 import AddBook from './components/AddBook';
 import CategoryList from './components/CategoryList';
-import Favorites from './components/Favourites';
+import Favourites from './components/Favourites';
 import Header from './components/Header/Header';
 
 
@@ -35,7 +35,7 @@ function App() {
             <Route path="/books" element={<BookList />} />
             <Route path="/category/:categoryId" element={<CategoryList />} />
             <Route path="/add-book" element={<AddBook />} />
-            <Route path="/favorites" element={<Favorites />} />
+            <Route path="/favourites" element={<Favourites />} />
           </Routes>
           <Footer />
         </div>
