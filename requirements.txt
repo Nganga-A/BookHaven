@@ -20,7 +20,7 @@ distlib
 distro
 distro-info
 entrypoints
-Faker
+# Faker
 filelock
 flask
 Flask-Cors
