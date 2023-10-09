@@ -20,6 +20,7 @@ distlib
 distro
 distro-info
 entrypoints
+Faker == '18.13.0'
 filelock
 flask
 Flask-Cors
