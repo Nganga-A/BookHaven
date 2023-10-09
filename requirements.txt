@@ -5,7 +5,6 @@ backcall
 bcrypt
 beautifulsoup4
 blinker
-Brlapi
 bs4
 certifi
 chardet
