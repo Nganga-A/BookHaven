@@ -15,6 +15,9 @@ flask-wtf = "*"
 faker = "*"
 gunicorn = "*"
 python-dateutil = "*"
+sqlalchemy-serializer = "*"
+bcrypt = "*"
+flask-jwt-extended = "*"
 
 [dev-packages]
 
