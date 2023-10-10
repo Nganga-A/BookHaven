@@ -7,7 +7,7 @@ const BookCategories = ({category_id}) => {
 
   useEffect(() => {
     // Fetch categories and their books from your Flask API
-    axios.get(`http://127.0.0.1:5000/category/${category_id}/books`)
+    axios.get(`https://bookhaven-i7e2.onrender.com/${category_id}/books`)
       .then(response => {
         setCategories(response.data);
       })
