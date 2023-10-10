@@ -1,0 +1,72 @@
+.form_container {
+width: 30%;
+
+}
+
+@media screen and (max-width: 1000px) {
+    .form_container {
+        width: 5%;
+        
+        }
+}
+
+@media screen and (max-width: 700px) {
+    .form_container {
+        width: 65%;
+        
+        }
+}
+
+
+/* style.css */
+
+/* Center the login form vertically and horizontally */
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f8f9fa; /* Background color for the entire page */
+  }
+  
+  /* Style the login form container */
+  .form {
+    background-color: #ffffff; /* Background color for the login form */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  }
+  
+  /* Style the form header (Login To Existing Account) */
+  .form h1 {
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  /* Style the form fields and buttons */
+  .form .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form .form-check {
+    margin-bottom: 20px;
+  }
+  
+  .form .d-grid {
+    margin-top: 20px;
+  }
+  
+  /* Style the "Forgot Password?" and "Signup" links */
+  .form p {
+    text-align: right;
+    margin-top: 10px;
+  }
+  
+  .form a {
+    text-decoration: none;
+    color: #007bff; /* Blue color for links */
+  }
+  
+  .form a:hover {
+    text-decoration: underline; /* Underline links on hover */
+  }
+  

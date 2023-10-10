@@ -1,0 +1,205 @@
+{
+    "books": [
+      {
+        "id": 1,
+        "title": "Sample Book Title 1",
+        "cover_url": "https://example.com/cover1.jpg",
+        "author": "Author Name 1",
+        "subjects": ["Fiction", "Drama"],
+        "total_editions": 100,
+        "first_publish_year": 2000,
+        "category": "Novel"
+      },
+      {
+        "id": 2,
+        "title": "Sample Book Title 2",
+        "cover_url": "https://example.com/cover2.jpg",
+        "author": "Author Name 2",
+        "subjects": ["Science Fiction", "Adventure"],
+        "total_editions": 150,
+        "first_publish_year": 2010,
+        "category": "Science Fiction"
+      },
+      {
+        "id": 3,
+        "title": "Sample Book Title 3",
+        "cover_url": "https://example.com/cover3.jpg",
+        "author": "Author Name 3",
+        "subjects": ["Non-Fiction", "Biography"],
+        "total_editions": 50,
+        "first_publish_year": 1995,
+        "category": "Biography"
+      },
+      {
+        "id": 4,
+        "title": "Sample Book Title 4",
+        "cover_url": "https://example.com/cover4.jpg",
+        "author": "Author Name 4",
+        "subjects": ["Mystery", "Thriller"],
+        "total_editions": 75,
+        "first_publish_year": 2008,
+        "category": "Mystery"
+      },
+      {
+        "id": 5,
+        "title": "Sample Book Title 5",
+        "cover_url": "https://example.com/cover5.jpg",
+        "author": "Author Name 5",
+        "subjects": ["Fantasy", "Adventure"],
+        "total_editions": 120,
+        "first_publish_year": 2015,
+        "category": "Fantasy"
+      },
+      {
+        "id": 6,
+        "title": "Sample Book Title 6",
+        "cover_url": "https://example.com/cover6.jpg",
+        "author": "Author Name 6",
+        "subjects": ["Science", "Education"],
+        "total_editions": 90,
+        "first_publish_year": 2003,
+        "category": "Science"
+      },
+      {
+        "id": 7,
+        "title": "Sample Book Title 7",
+        "cover_url": "https://example.com/cover7.jpg",
+        "author": "Author Name 7",
+        "subjects": ["Romance", "Drama"],
+        "total_editions": 80,
+        "first_publish_year": 2012,
+        "category": "Romance"
+      },
+      {
+        "id": 8,
+        "title": "Sample Book Title 8",
+        "cover_url": "https://example.com/cover8.jpg",
+        "author": "Author Name 8",
+        "subjects": ["History", "Biography"],
+        "total_editions": 60,
+        "first_publish_year": 2007,
+        "category": "History"
+      },
+      {
+        "id": 9,
+        "title": "Sample Book Title 9",
+        "cover_url": "https://example.com/cover9.jpg",
+        "author": "Author Name 9",
+        "subjects": ["Science Fiction", "Adventure"],
+        "total_editions": 110,
+        "first_publish_year": 2018,
+        "category": "Science Fiction"
+      },
+      {
+        "id": 10,
+        "title": "Sample Book Title 10",
+        "cover_url": "https://example.com/cover10.jpg",
+        "author": "Author Name 10",
+        "subjects": ["Self-Help", "Motivation"],
+        "total_editions": 40,
+        "first_publish_year": 2001,
+        "category": "Self-Help"
+      },
+      {
+        "id": 11,
+        "title": "Sample Book Title 11",
+        "cover_url": "https://example.com/cover11.jpg",
+        "author": "Author Name 11",
+        "subjects": ["Fantasy", "Adventure"],
+        "total_editions": 95,
+        "first_publish_year": 2014,
+        "category": "Fantasy"
+      },
+      {
+        "id": 12,
+        "title": "Sample Book Title 12",
+        "cover_url": "https://example.com/cover12.jpg",
+        "author": "Author Name 12",
+        "subjects": ["Non-Fiction", "History"],
+        "total_editions": 55,
+        "first_publish_year": 2009,
+        "category": "History"
+      },
+      {
+        "id": 13,
+        "title": "Sample Book Title 13",
+        "cover_url": "https://example.com/cover13.jpg",
+        "author": "Author Name 13",
+        "subjects": ["Mystery", "Thriller"],
+        "total_editions": 70,
+        "first_publish_year": 2011,
+        "category": "Mystery"
+      },
+      {
+        "id": 14,
+        "title": "Sample Book Title 14",
+        "cover_url": "https://example.com/cover14.jpg",
+        "author": "Author Name 14",
+        "subjects": ["Romance", "Drama"],
+        "total_editions": 85,
+        "first_publish_year": 2017,
+        "category": "Romance"
+      },
+      {
+        "id": 15,
+        "title": "Sample Book Title 15",
+        "cover_url": "https://example.com/cover15.jpg",
+        "author": "Author Name 15",
+        "subjects": ["Science", "Education"],
+        "total_editions": 65,
+        "first_publish_year": 2006,
+        "category": "Science"
+      },
+      {
+        "id": 16,
+        "title": "Sample Book Title 16",
+        "cover_url": "https://example.com/cover16.jpg",
+        "author": "Author Name 16",
+        "subjects": ["Fiction", "Drama"],
+        "total_editions": 120,
+        "first_publish_year": 2016,
+        "category": "Novel"
+      },
+      {
+        "id": 17,
+        "title": "Sample Book Title 17",
+        "cover_url": "https://example.com/cover17.jpg",
+        "author": "Author Name 17",
+        "subjects": ["Science Fiction", "Adventure"],
+        "total_editions": 90,
+        "first_publish_year": 2019,
+        "category": "Science Fiction"
+      },
+      {
+        "id": 18,
+        "title": "Sample Book Title 18",
+        "cover_url": "https://example.com/cover18.jpg",
+        "author": "Author Name 18",
+        "subjects": ["Non-Fiction", "Biography"],
+        "total_editions": 40,
+        "first_publish_year": 2013,
+        "category": "Biography"
+      },
+      {
+        "id": 19,
+        "title": "Sample Book Title 19",
+        "cover_url": "https://example.com/cover19.jpg",
+        "author": "Author Name 19",
+        "subjects": ["Mystery", "Thriller"],
+        "total_editions": 75,
+        "first_publish_year": 2004,
+        "category": "Mystery"
+      },
+      {
+        "id": 20,
+        "title": "Sample Book Title 20",
+        "cover_url": "https://example.com/cover20.jpg",
+        "author": "Author Name 20",
+        "subjects": ["Fantasy", "Adventure"],
+        "total_editions": 110,
+        "first_publish_year": 2012,
+        "category": "Fantasy"
+      }
+    ]
+  }
+  
