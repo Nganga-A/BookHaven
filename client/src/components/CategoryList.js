@@ -38,6 +38,7 @@
 // export default CategoryList;
 
 import React, { useState, useEffect } from 'react';
+import axios from 'axios'; // Import axios
 
 const BookList = ({ books }) => {
   return (
@@ -50,20 +51,18 @@ const BookList = ({ books }) => {
 };
 
 const CategoryDisplay = ({ category_id }) => {
-  const [books, setBooks] = useState([]);
+  const [books, setBooks] = useState([]); // Change variable name to 'books'
   const [error, setError] = useState(null);
 
   useEffect(() => {
-
-    // Fetch categories and their books from your Flask API
+    // Fetch books from your Flask API using axios
     axios.get(`https://bookhaven-i7e2.onrender.com/${category_id}/books`)
       .then(response => {
-        setCategories(response.data);
-
+        setBooks(response.data); // Correct the function name to 'setBooks'
       })
       .catch((error) => {
         console.error('Fetch error:', error);
-        setError(error.message); // Set the error message in state
+        setError(error.message);
       });
   }, [category_id]);
 
