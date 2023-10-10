@@ -54,16 +54,12 @@ const CategoryDisplay = ({ category_id }) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:5500/category/${category_id}/books`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setBooks(data);
-        setError(null); // Clear any previous errors
+
+    // Fetch categories and their books from your Flask API
+    axios.get(`https://bookhaven-i7e2.onrender.com/${category_id}/books`)
+      .then(response => {
+        setCategories(response.data);
+
       })
       .catch((error) => {
         console.error('Fetch error:', error);
