@@ -22,7 +22,7 @@ function Signup() {
     e.preventDefault();
     // Send formData to the backend (Flask) for registration
     try {
-      const response = await fetch('http://127.0.0.1:5555/register', {
+      const response = await fetch('http://127.0.0.1:555https://bookhaven-i7e2.onrender.com//register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
