@@ -2,6 +2,7 @@ import React from 'react';
 import "./About.css";
 import aboutImg from "../images/about-img.jpg";
 import anotherImg from "../images/about-img-2.png"; // Import your new image
+// import aboutImage from '../images/about-img-2.png';
 
 const About = () => {
   return (

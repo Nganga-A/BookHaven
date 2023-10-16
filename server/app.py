@@ -168,7 +168,8 @@ def hash_password(password):
 class UserSignUpResource(Resource):
     def post(self):
         data = request.get_json()
-        if 'name' not in data or 'email' not in data or 'password' not in data:
+        print(data)
+        if 'username' not in data or 'email' not in data or 'password' not in data:
             return {'message': 'Name, email, and password are required'}, 400
 
         # Check if the user with the same email already exists
@@ -176,22 +177,39 @@ class UserSignUpResource(Resource):
         if existing_user:
             return {'message': 'User with this email already exists'}, 400
 
-        hashed_password = hash_password(data['password'])
-        user = User(name=data['name'], email=data['email'], password=hashed_password)
+        hashed_password = data['password']
+        user = User(name=data['username'], email=data['email'], password=hashed_password)
         db.session.add(user)
         db.session.commit()
 
         return {'message': 'User registered successfully'}, 201
 
+# # Resource class for user login
+# class UserLoginResource(Resource):
+#     def post(self):
+#         data = request.get_json()
+#         if 'email' not in data or 'password' not in data:
+#             return {'message': 'Email and password are required'}, 400
+
+#         user = User.query.filter_by(email=data['email']).first()
+#         if user and hashpw(data['password'].encode('utf-8'), user.password.encode('utf-8')) == user.password.encode('utf-8'):
+#             access_token = create_access_token(identity=user.id)
+#             return {'access_token': access_token}, 200
+#         else:
+#             return {'message': 'Invalid credentials'}, 401
 # Resource class for user login
 class UserLoginResource(Resource):
     def post(self):
         data = request.get_json()
+        print(data)
         if 'email' not in data or 'password' not in data:
             return {'message': 'Email and password are required'}, 400
 
         user = User.query.filter_by(email=data['email']).first()
-        if user and hashpw(data['password'].encode('utf-8'), user.password.encode('utf-8')) == user.password.encode('utf-8'):
+        print(user)
+        print(user.password)
+        print(user.email)
+        if user and 'password' in data and data['password'] == user.password:
             access_token = create_access_token(identity=user.id)
             return {'access_token': access_token}, 200
         else:
@@ -219,7 +237,7 @@ api.add_resource(UserLoginResource, '/login')
 api.add_resource(ProtectedResource, '/favorites', '/readings')
 
 if __name__ == '__main__':
-    app.run()
+    app.run(port=5555)
 
     
 # from flask import Flask, request, jsonify
