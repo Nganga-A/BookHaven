@@ -1,35 +1,59 @@
 import React, { useState } from 'react';
-
-
 import { Card, Form, Button } from 'react-bootstrap';
-import './style.css';
 import { Link } from 'react-router-dom';
-
-
+import { useSignIn } from 'react-auth-kit';
+import './style.css';
+import  {useNavigate} from 'react-router-dom'
 
 function Login() {
   const [loginData, setLoginData] = useState({
     email: '',
     password: '',
   });
+const navigate = useNavigate()
+  const signIn = useSignIn(); // Hook for handling sign-in
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setLoginData({ ...loginData, [name]: value });
   };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   // Send loginData to the backend (Flask) for authentication
-  //   // You can use Axios or fetch to make an API call to your Flask server.
-  // };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Submit button clicked'); // Add this line for debugging
-    // Send loginData to the backend (Flask) for authentication
-    // You can use Axios or fetch to make an API call to your Flask server.
+    try {
+      const response = await fetch('http://127.0.0.1:5555/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(loginData),
+      });
+
+      if (response.ok) {
+        // Authentication successful, sign in the user
+        const data = await response.json();
+        console.log(data);
+        if (data.access_token) {
+          signIn({
+            token: data.access_token,
+            expiresIn: 3600,
+            tokenType: 'Bearer',
+            authState: { email: loginData.email },
+          });
+          // Redirect or update UI to indicate successful login
+          navigate("/");
+        } else {
+          // Handle the case where the server didn't provide an access token
+        }
+      } else {
+        // Handle authentication error (e.g., show an error message)
+        const data = await response.json();
+        console.log(data);
+      }
+    } catch (error) {
+      console.error('Authentication error:', error);
+    }
   };
-  
 
   return (
     <div className='login template d-flex justify-content-center align-items-center vh-100 bg-primary'>
