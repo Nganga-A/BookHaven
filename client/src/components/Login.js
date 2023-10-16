@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
-
-
 import { Card, Form, Button } from 'react-bootstrap';
 import './style.css';
 import { Link } from 'react-router-dom';
-
-
 
 function Login() {
   const [loginData, setLoginData] = useState({
@@ -18,18 +14,27 @@ function Login() {
     setLoginData({ ...loginData, [name]: value });
   };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   // Send loginData to the backend (Flask) for authentication
-  //   // You can use Axios or fetch to make an API call to your Flask server.
-  // };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Submit button clicked'); // Add this line for debugging
+    console.log('Submit button clicked');
+
     // Send loginData to the backend (Flask) for authentication
-    // You can use Axios or fetch to make an API call to your Flask server.
+    const response = await fetch('http://localhost:5000/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(loginData),
+    });
+
+    if (response.status === 200) {
+      // Authentication successful, you can navigate to a new page or set a user session
+      console.log('Authentication successful');
+    } else {
+      // Authentication failed, handle the error here
+      console.log('Authentication failed');
+    }
   };
-  
 
   return (
     <div className='login template d-flex justify-content-center align-items-center vh-100 bg-primary'>
@@ -66,7 +71,7 @@ function Login() {
                   className='custom-control custom-checkbox'
                 />
               </Form.Group>
-              <div className='d-grid'>
+              <div>
                 <Button variant="primary" type="submit">
                   Login
                 </Button>

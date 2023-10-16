@@ -56,8 +56,9 @@ const CategoryDisplay = ({ category_id }) => {
 
   useEffect(() => {
     // Fetch books from your Flask API using axios
-    axios.get(`https://bookhaven-i7e2.onrender.com/${category_id}/books`)
-      .then(response => {
+
+    axios.get(`http://localhost:5000/category/${category_id}/books`, { withCredentials: true })
+    .then(response => {
         setBooks(response.data); // Correct the function name to 'setBooks'
       })
       .catch((error) => {
